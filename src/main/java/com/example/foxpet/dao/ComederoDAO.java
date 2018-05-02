@@ -13,22 +13,22 @@ public class ComederoDAO {
 	@Autowired
 	ComederoRepository comederoRepository;
 	
-	/*Guardar Comuna*/
+	
 	public Comedero save(Comedero alr) {
 		return comederoRepository.save(alr);
 	}
 	
-	/*Buscar Comuna*/
+	
 	public List<Comedero> findAll(){
 		return comederoRepository.findAll();
 	}
 	
-	/* Tomar una Comuna por Id*/
+	
 	public Comedero findOne(int alr) {
 	    return comederoRepository.findById(alr).orElse(null);
 	}
 	
-	/*Borrar Comuna*/
+	
 	public void delete(Comedero alr) {
 		comederoRepository.delete(alr);
 	}

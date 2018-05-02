@@ -52,12 +52,12 @@ public class EspecieController {
 			return ResponseEntity.notFound().build();
 		}
 		emp.setNombre(proDetails.getNombre());
-		Especie updateComuna=especieDAO.save(emp);
-		return ResponseEntity.ok().body(updateComuna);
+		Especie updateEspecie=especieDAO.save(emp);
+		return ResponseEntity.ok().body(updateEspecie);
 	}
 	
 	@DeleteMapping("/especies/{id}")
-	public ResponseEntity<Especie> deleteAlerta(@PathVariable(value="id") int comId){
+	public ResponseEntity<Especie> deleteEspecie(@PathVariable(value="id") int comId){
 		
 		Especie emp=especieDAO.findOne(comId);
 		if(emp==null) {

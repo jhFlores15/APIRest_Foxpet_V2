@@ -12,23 +12,22 @@ public class ComidaExtraDAO {
 	@Autowired
 	ComidaExtraRepository comidaextraRepository;
 	
-	/*Guardar Comuna*/
+	
 	public ComidaExtra save(ComidaExtra coex) {
 		return comidaextraRepository.save(coex);
 	}
 	
-	/*Buscar Comuna*/
+
 	public List<ComidaExtra> findAll(){
 		return comidaextraRepository.findAll();
 	}
 	
-	/* Tomar una Comuna por Id*/
+
 	public ComidaExtra findOne(int coex) {
 	    return comidaextraRepository.findById(coex).orElse(null);
 	}
 	
-	/*Borrar Comuna*/
-	public void delete(ComidaExtra coex) {
+		public void delete(ComidaExtra coex) {
 		comidaextraRepository.delete(coex);
 	}
 }

@@ -14,22 +14,22 @@ public class AlertaDAO {
 	@Autowired
 	AlertaRepository alertaRepository;
 	
-	/*Guardar Comuna*/
+	
 	public Alerta save(Alerta alr) {
 		return alertaRepository.save(alr);
 	}
 	
-	/*Buscar Comuna*/
+
 	public List<Alerta> findAll(){
 		return alertaRepository.findAll();
 	}
 	
-	/* Tomar una Comuna por Id*/
+
 	public Alerta findOne(int alr) {
 	    return alertaRepository.findById(alr).orElse(null);
 	}
 	
-	/*Borrar Comuna*/
+
 	public void delete(Alerta alr) {
 		alertaRepository.delete(alr);
 	}
