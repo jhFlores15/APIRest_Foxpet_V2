@@ -3,11 +3,13 @@ package com.example.foxpet.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.foxpet.model.EstadoReproductivo;
 import com.example.foxpet.repository.EstadoReproductivoRepository;
 
 
+@Service
 public class EstadoReproductivoDAO {
 
 	@Autowired

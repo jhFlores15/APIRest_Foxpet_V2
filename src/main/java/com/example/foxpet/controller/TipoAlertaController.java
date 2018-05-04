@@ -14,30 +14,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.foxpet.dao.RazaDAO;
-import com.example.foxpet.model.Raza;
+import com.example.foxpet.dao.TipoAlertaDAO;
+import com.example.foxpet.model.TipoAlerta;
 
 
 @RestController
 @RequestMapping("/foxpet")
-public class RazaController {
+public class TipoAlertaController {
 
 	@Autowired
-	RazaDAO razaDAO;
+	TipoAlertaDAO tipoalertaDAO;
 	
-	@PostMapping("/razas")
-	public Raza crearRaza(@Valid @RequestBody Raza com) {
-		return razaDAO.save(com);
+	@PostMapping("/tipoalertas")
+	public TipoAlerta crearTipoAlerta(@Valid @RequestBody TipoAlerta com) {
+		return tipoalertaDAO.save(com);
 	}
 
-	@GetMapping("/razas")
-	public List<Raza> getAllRaza(){
-		return razaDAO.findAll();
+	@GetMapping("/tipoalertas")
+	public List<TipoAlerta> getAllTipoAlertas(){
+		return tipoalertaDAO.findAll();
 	}
 	
-	@GetMapping("/razas/{id}")
-	public ResponseEntity<Raza> getRazaById(@PathVariable(value = "id") int com){
-		Raza emp = razaDAO.findOne(com);
+	@GetMapping("/tipoalertas/{id}")
+	public ResponseEntity<TipoAlerta> getTipoAlertaById(@PathVariable(value = "id") int com){
+		TipoAlerta emp = tipoalertaDAO.findOne(com);
 		if(emp == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -45,14 +45,14 @@ public class RazaController {
 	}
 	
 	
-	@DeleteMapping("/razas/{id}")
-	public ResponseEntity<Raza> deleteRaza(@PathVariable(value="id") int comId){
+	@DeleteMapping("/tipoalertas/{id}")
+	public ResponseEntity<TipoAlerta> deleteTipoAlerta(@PathVariable(value="id") int comId){
 		
-		Raza emp=razaDAO.findOne(comId);
+		TipoAlerta emp=tipoalertaDAO.findOne(comId);
 		if(emp==null) {
 			return ResponseEntity.notFound().build();
 		}
-		razaDAO.delete(emp);
+		tipoalertaDAO.delete(emp);
 		
 		return ResponseEntity.ok().build();		
 	}

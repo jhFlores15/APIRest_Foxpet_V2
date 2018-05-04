@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.foxpet.dao.EstablecimientoDAO;
 import com.example.foxpet.model.Establecimiento;
 
+
 @RestController
 @RequestMapping("/foxpet")
 public class EstablecimientoController {
@@ -67,3 +68,6 @@ public class EstablecimientoController {
 		return ResponseEntity.ok().build();		
 	}
 }
+
+
+

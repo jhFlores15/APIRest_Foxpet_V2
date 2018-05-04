@@ -3,12 +3,13 @@ package com.example.foxpet.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.foxpet.model.FrecuenciaComida;
 import com.example.foxpet.repository.FrecuenciaComidaRepository;
 
 
-
+@Service
 public class FrecuenciaComidaDAO {
 	
 	@Autowired
