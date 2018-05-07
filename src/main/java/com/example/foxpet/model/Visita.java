@@ -11,7 +11,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import javax.xml.soap.Text;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -35,7 +34,7 @@ public class Visita {
 	@Temporal(TemporalType.TIME)
 	private Date hora;
 	@NotNull
-	private Text asunto;
+	private String asunto;
 	public int getId() {
 		return id;
 	}
@@ -66,10 +65,10 @@ public class Visita {
 	public void setHora(Date hora) {
 		this.hora = hora;
 	}
-	public Text getAsunto() {
+	public String getAsunto() {
 		return asunto;
 	}
-	public void setAsunto(Text asunto) {
+	public void setAsunto(String asunto) {
 		this.asunto = asunto;
 	}	
 }
